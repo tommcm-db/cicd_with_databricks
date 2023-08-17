@@ -34,8 +34,8 @@ expected_df = spark.createDataFrame(expected_data, expected_schema)
 
 actual_df = test_transform_to_silver_1()
 # Verify the result
-assert expected_df.select("order_status").collect(
-) == actual_df.select("order_status").collect()
+assert expected_df.select("order_status").collect() == actual_df.select("order_status").collect()
+assert expected_df.select("customer_id").collect() == actual_df.select("customer_id").collect()
 
 # COMMAND ----------
 
